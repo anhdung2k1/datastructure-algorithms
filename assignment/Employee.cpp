@@ -3,10 +3,10 @@
 Employee::Employee(const char empId[8], const char empName[20], char empStatus, int childs, const char empEduLevel[2], long baseSalary) 
     : numOfChilds(childs), baseSalary(baseSalary) {
     // Constraint values
-    if (this->numOfChilds > 20 || this->baseSalary > 1000000) {
-        cout << "Invalid values, try to reinitialize" << endl;
-        exit(1);
-    }
+    // if (this->numOfChilds > 20 || this->baseSalary > 1000000) {
+    //     cout << "Invalid values, try to reinitialize" << endl;
+    //     exit(1);
+    // }
     // Copy empId, empName, and empEduLevel using strcpy
     strcpy(this->employeeId, empId);
     strcpy(this->employeeName, empName);

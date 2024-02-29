@@ -5,10 +5,10 @@ EmployeeTrack::EmployeeTrack(const char empId[8], const char empName[20], char e
     : Employee(empId, empName, empStatus, childs, empEduLevel, baseSalary),
       permissionLeave(pLeave), nonPermissionLeave(npLeave), overDaysWorkInMonth(odwInMonth) {
         // Constraint values
-        if (this->permissionLeave > 28 || this->nonPermissionLeave > 28 || this->overDaysWorkInMonth > 28 || this->realSalary > 2000000) {
-            cout << "Invalid values, try to reinitialize" << endl;
-            exit(1);
-        }
+        // if (this->permissionLeave > 28 || this->nonPermissionLeave > 28 || this->overDaysWorkInMonth > 28 || this->realSalary > 2000000) {
+        //     cout << "Invalid values, try to reinitialize" << endl;
+        //     exit(1);
+        // }
         strcpy(this->workResult, workRes);
         if (this->numOfChilds > 2) {
             this->addSal += this->baseSalary * 0.05;
@@ -24,6 +24,42 @@ EmployeeTrack::EmployeeTrack(const char empId[8], const char empName[20], char e
         }
         this->realSalary = this->baseSalary + this->addSal;
     }
+
+int EmployeeTrack::getPermissionLeave() {
+    return permissionLeave;
+}
+
+int EmployeeTrack::getNonPermissionLeave() {
+    return nonPermissionLeave;
+}
+
+int EmployeeTrack::getOverDaysWorkInMonth() {
+    return overDaysWorkInMonth;
+}
+
+char* EmployeeTrack::getWorkResult() {
+    return workResult;
+}
+
+long EmployeeTrack::getRealSalary() {
+    return realSalary;
+}
+
+void EmployeeTrack::setPermissionLeave(int pLeave) {
+    this->permissionLeave = pLeave;
+}
+
+void EmployeeTrack::setNonPermissionLeave(int npLeave) {
+    this->nonPermissionLeave = npLeave;
+}
+
+void EmployeeTrack::setODW(int odw) {
+    this->overDaysWorkInMonth = odw;
+}
+
+void EmployeeTrack::setWorkResult(char* workResult) {
+    strcpy(this->workResult, workResult);
+}
 
 void EmployeeTrack::showInfo() {
     // Get the Employee info

@@ -22,6 +22,11 @@ public:
     int getOverDaysWorkInMonth();
     char* getWorkResult();
     long getRealSalary();
+
+    void setPermissionLeave(int pLeave);
+    void setNonPermissionLeave(int npLeave);
+    void setODW(int odw);
+    void setWorkResult(char* workResult);
     
     void showInfo();
 };
