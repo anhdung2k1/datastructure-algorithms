@@ -146,6 +146,7 @@ class Utils {
         void optionHome() {
             cout << "1. Add new Employee\n";
             cout << "2. Find Employee\n";
+            cout << "3. Show all Employee Salary in Month\n";
         }
 
         void optionEmployeeFound() {
@@ -181,6 +182,14 @@ class Utils {
                 }
             } while(n != -1);
         }
+        
+        // Show Salary In Month of all employees
+        void showSalaryTableInMonth() {
+            cout << "Report Salary in Month\n";
+            for (EmployeeTrack empTrack : empList) {
+                cout << empTrack.getEmployeeId() << "\t" << empTrack.getEmployeeName() << "\t" << empTrack.getRealSalary() << endl;
+            }
+        }
 
         // Parse parameters as reference to mapping directly in main function executed
         void showTable() { 
@@ -199,13 +208,16 @@ class Utils {
                         kpiRequired = (option == "yes" ? true : false);
                         addEmployee(kpiRequired);
                         break;
-                    default:
+                    case 2:
                         cout << "Enter Employee ID: ";
                         cin >> empId;
                         indexOfEmp = findEmployee(empId);
                         if(indexOfEmp != -1) {
                             foundEmployeeOption(indexOfEmp);
                         }
+                        break;
+                    default:
+                        showSalaryTableInMonth();
                         break;
                 }
 
