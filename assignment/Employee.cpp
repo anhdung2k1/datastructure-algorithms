@@ -40,10 +40,6 @@ long Employee::getBaseSalary() {
     return baseSalary;
 }
 
-void Employee::setEmployeeId(char* empId) {
-    strcpy(this->employeeId, empId);
-}
-
 void Employee::setEmployeeName(char* name) {
     strcpy(this->employeeName, name);
 }

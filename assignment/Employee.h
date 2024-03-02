@@ -23,7 +23,7 @@ public:
     int getNumberOfChilds() ;
     char* getEmployeeEduLevel() ;
     long getBaseSalary();
-    void setEmployeeId(char* empId);
+    
     void setEmployeeName(char* name);
     void setEmployeeStatus(char status);
     void setNumberOfChild(int num);
