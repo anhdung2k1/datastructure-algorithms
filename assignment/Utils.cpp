@@ -174,7 +174,7 @@ class Utils {
                     case 2:
                         // Delete employee from the list
                         deleteEmployee(indexOfEmp);
-                        optionUpdate = -1;
+                        n = -1;
                         break;
                     default:
                         empList[indexOfEmp].showInfo();
