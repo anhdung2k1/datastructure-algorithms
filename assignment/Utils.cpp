@@ -69,6 +69,41 @@ class Utils {
             return -1;
         }
 
+        void swapEmployee(EmployeeTrack& emp1, EmployeeTrack& emp2) {
+            EmployeeTrack empTemp = emp1;
+            emp1 = emp2;
+            emp2 = empTemp;
+        }  
+
+        int partition(vector<EmployeeTrack>&empListTrack, int low, int high) {
+            long pivot = empListTrack[high].getRealSalary();
+            int i = low - 1;
+            for(int j = low; j <= high; j++) {
+                if(empListTrack[j].getRealSalary() < pivot) {
+                    i++;
+                    swapEmployee(empListTrack[i], empListTrack[j]);
+                }
+            }
+            swapEmployee(empListTrack[i+1], empListTrack[high]);
+            return i+1;
+        }
+
+        void quickSortEmployeeSalInc(vector<EmployeeTrack>&empListTrack, int low, int high) {
+            if(low < high) {
+                int pivot = partition(empListTrack, low, high);
+                quickSortEmployeeSalInc(empListTrack, low, pivot - 1); // Smaller in left
+                quickSortEmployeeSalInc(empListTrack, pivot + 1, high); // Higher goes right
+            }
+        }
+
+        void showEmployeeIncreasSalary() {
+            quickSortEmployeeSalInc(empList, 0, empList.size() - 1);
+            cout << "Report Salary in Month\n";
+            for (EmployeeTrack empTrack : empList) {
+                cout << empTrack.getEmployeeId() << "\t" << empTrack.getEmployeeName() << "\t" << empTrack.getRealSalary() << endl;
+            }
+        }
+
         // Delete the employee at index
         void deleteEmployee(int index) {
             // Delete the employee at index
@@ -182,14 +217,6 @@ class Utils {
                 }
             } while(n != -1);
         }
-        
-        // Show Salary In Month of all employees
-        void showSalaryTableInMonth() {
-            cout << "Report Salary in Month\n";
-            for (EmployeeTrack empTrack : empList) {
-                cout << empTrack.getEmployeeId() << "\t" << empTrack.getEmployeeName() << "\t" << empTrack.getRealSalary() << endl;
-            }
-        }
 
         // Parse parameters as reference to mapping directly in main function executed
         void showTable() { 
@@ -217,7 +244,7 @@ class Utils {
                         }
                         break;
                     default:
-                        showSalaryTableInMonth();
+                        showEmployeeIncreasSalary();
                         break;
                 }
 
