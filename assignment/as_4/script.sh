@@ -1,2 +1,2 @@
-g++ -o main main.cpp MergeSort.cpp RadixSort.cpp QuickSort.cpp && \
+g++ -o main main.cpp MergeSort.cpp NaturalMergeSort.cpp QuickSort.cpp && \
 ./main

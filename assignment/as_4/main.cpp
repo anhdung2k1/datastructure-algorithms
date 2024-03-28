@@ -1,5 +1,5 @@
 #include "MergeSort.cpp"
-#include "RadixSort.cpp"
+#include "NaturalMergeSort.cpp"
 #include "QuickSort.cpp"
 
 #define SIZE_MAX_INPUT 1000000
@@ -31,15 +31,15 @@ int main() {
     vector<int> arr;
     generateInput(arr);
 
-    int radixTimeExecution, mergeTimeExecution, quickTimeExecution;
+    int naturalMergeTimeExecution, mergeTimeExecution, quickTimeExecution;
 
     shared_ptr<SortContext>context = make_shared<SortContext>();
     shared_ptr<MergeSort>mergeSort = make_shared<MergeSort>();
-    shared_ptr<RadixSort>radixSort = make_shared<RadixSort>();
+    shared_ptr<NaturalMergeSort>naturalMergeSort = make_shared<NaturalMergeSort>();
     shared_ptr<QuickSort>quickSort = make_shared<QuickSort>();
 
-    context->setStrategy(radixSort);
-    context->executeSort(arr, radixTimeExecution);
+    context->setStrategy(naturalMergeSort);
+    context->executeSort(arr, naturalMergeTimeExecution);
     context->executePrint(arr);
 
     context->setStrategy(mergeSort);
@@ -50,7 +50,7 @@ int main() {
     context->executeSort(arr, quickTimeExecution);
     context->executePrint(arr);
 
-    cout << "Radix Sort Time: " << radixTimeExecution << " microseconds" << endl;
+    cout << "Natural Merge Sort Time: " << naturalMergeTimeExecution << " microseconds" << endl;
     cout << "Merge Sort Time: " << mergeTimeExecution << " microseconds" << endl;
     cout << "Quick Sort Time: " << quickTimeExecution << " microseconds" << endl;
 
