@@ -92,7 +92,7 @@ class Main {
                 }
             }
             context->setStrategy(insertionSort);
-            context->setIsDescending(isDesc);
+            context->setIsDescending(!isDesc);
             // Sort left even array to ascending
             context->executeSort(leftArr);
             // Sort right odd array to descending
@@ -190,6 +190,7 @@ class Main {
 
             cout << "Merge Sort Time Execution: " << mergeSortTimeExecution << endl;
             cout << "Selection Sort Time Execution: " << selectionSortTimeExecution << endl;
+            cout << "Time Execution Bias: " << abs(mergeSortTimeExecution - selectionSortTimeExecution) << endl;
         }
 };
 
