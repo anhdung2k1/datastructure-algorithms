@@ -20,7 +20,7 @@
 - **Ưu điểm:** Dễ cài đặt và hiểu.
 - **Khuyết điểm:** Không hiệu quả với danh sách lớn, độ phức tạp thời gian luôn là O(n^2).
 
-```
+```cpp
 void SelectionSort(int a[],int n )
 {
 	int min; // chỉ số phần tử nhỏ nhất trong dãy hiện hành
@@ -41,7 +41,7 @@ void SelectionSort(int a[],int n )
 - **Ưu điểm:** Hiệu quả với danh sách nhỏ hoặc gần như đã sắp xếp, ổn định.
 - **Khuyết điểm:** Độ phức tạp thời gian tệ nhất là O(n^2).
 
-```
+```cpp
 void InsertionSort(int a[], int n )
 {	
     int pos, x;
@@ -62,7 +62,7 @@ void InsertionSort(int a[], int n )
 - **Ưu điểm:** Dễ hiểu và cài đặt.
 - **Khuyết điểm:** Không hiệu quả với danh sách lớn, không ổn định, độ phức tạp thời gian là O(n^2).
 
-```
+```cpp
 void InterchangeSort(int a[], int n)
 {	
 	int  i, j;
@@ -78,7 +78,7 @@ void InterchangeSort(int a[], int n)
 - **Ưu điểm:** Dễ hiểu và cài đặt, ổn định.
 - **Khuyết điểm:** Không hiệu quả với danh sách lớn, độ phức tạp thời gian là O(n^2).
 
-```
+```cpp
 void BubbleSort(int a[], int n)
 {	
 	int i, j;
@@ -96,7 +96,7 @@ void BubbleSort(int a[], int n)
 #### Shaker Sort
 - **Ưu điểm:** Cải thiện so với Bubble Sort khi có thể phát hiện sắp xếp trong mỗi lần lặp từ hai phía.
 - **Khuyết điểm:** Độ phức tạp thời gian là O(n^2).
-```
+```cpp
 void ShakerSort(int a[], int n) {
     int left = 0;
     int right = n - 1;
@@ -125,7 +125,7 @@ void ShakerSort(int a[], int n) {
 - **Ưu điểm:** Tìm kiếm nhị phân để chèn làm giảm số lần so sánh.
 - **Khuyết điểm:** Không giảm số lần di chuyển phần tử, độ phức tạp thời gian là O(n^2).
 
-```
+```cpp
 void BinaryInsertionSort(int a[], int n) {
     for (int i = 1; i < n; i++) {
         int x = a[i];
@@ -152,7 +152,7 @@ void BinaryInsertionSort(int a[], int n) {
 - **Ưu điểm:** Hiệu quả với danh sách lớn hơn so với Insertion Sort, cải thiện độ phức tạp thời gian.
 - **Khuyết điểm:** Không ổn định, phức tạp trong việc lựa chọn khoảng cách nhảy.
 
-```
+```cpp
 void ShellSort(int a[], int n) {
     for (int gap = n / 2; gap > 0; gap /= 2) {
         for (int i = gap; i < n; i++) {
@@ -173,7 +173,7 @@ void ShellSort(int a[], int n) {
 - **Ưu điểm:** Độ phức tạp thời gian là O(nlogn), không bị ảnh hưởng bởi dữ liệu đầu vào.
 - **Khuyết điểm:** Không ổn định, phức tạp hơn so với các thuật toán sắp xếp khác.
 
-```
+```cpp
 void Heapify(int a[], int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
@@ -211,7 +211,7 @@ void HeapSort(int a[], int n) {
 - **Ưu điểm:** Rất nhanh với độ phức tạp trung bình là O(nlogn), phổ biến.
 - **Khuyết điểm:** Không ổn định, độ phức tạp tệ nhất là O(n^2).
 
-```
+```cpp
 void QuickSort(int a[], int left, int right)
 { 	
 	int i, j, x;
@@ -236,7 +236,7 @@ void QuickSort(int a[], int left, int right)
 - **Ưu điểm:** Ổn định, độ phức tạp thời gian là O(n log n), hiệu quả với dữ liệu lớn.
 - **Khuyết điểm:** Không nội tại, cần không gian thêm O(n).
 
-```
+```cpp
 void MergeSort(int a[], int n) {
    int b[MAX];
    int c[MAX];
@@ -300,7 +300,7 @@ void Merge(int a[], int nb, int nc, int k, int b[], int c[]) {
 - **Ưu điểm:** Rất nhanh với độ phức tạp thời gian O(nk), ổn định.
 - **Khuyết điểm:** Chỉ áp dụng cho các số nguyên, cần không gian thêm O(n + k).
 
-```
+```cpp
 // Hàm lấy giá trị lớn nhất trong mảng
 int getMax(int a[], int n) {
     int max = a[0];
