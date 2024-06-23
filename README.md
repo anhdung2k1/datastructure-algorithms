@@ -1,18 +1,18 @@
 ### So sánh các thuật toán sắp xếp
 
-| Thuật toán               | Độ phức tạp tốt nhất | Độ phức tạp tệ nhất | Độ phức tạp trung bình | Độ phức tạp không gian | Ổn định | Nội tại |
-|--------------------------|----------------------|---------------------|------------------------|------------------------|---------|---------|
-| Selection Sort           | O(n^2)               | O(n^2)              | O(n^2)                 | O(1)                   | Không   | Có      |
-| Insertion Sort           | O(n)                 | O(n^2)              | O(n^2)                 | O(1)                   | Có      | Có      |
-| Interchange Sort         | O(n^2)               | O(n^2)              | O(n^2)                 | O(1)                   | Không   | Có      |
-| Bubble Sort              | O(n)                 | O(n^2)              | O(n^2)                 | O(1)                   | Có      | Có      |
-| Shaker Sort              | O(n)                 | O(n^2)              | O(n^2)                 | O(1)                   | Có      | Có      |
-| Binary Insertion Sort    | O(n)                 | O(n^2)              | O(n^2)                 | O(1)                   | Có      | Có      |
-| Shell Sort               | O(n log n)           | O(n^(3/2))          | O(n log n)             | O(1)                   | Không   | Có      |
-| Heap Sort                | O(n log n)           | O(n log n)          | O(n log n)             | O(1)                   | Không   | Có      |
-| Quick Sort               | O(n log n)           | O(n^2)              | O(n log n)             | O(log n)               | Không   | Có      |
-| Merge Sort               | O(n log n)           | O(n log n)          | O(n log n)             | O(n)                   | Có      | Không   |
-| Radix Sort               | O(nk)                | O(nk)               | O(nk)                  | O(n + k)               | Có      | Có      |
+| Thuật toán               | Độ phức tạp tốt nhất | Độ phức tạp tệ nhất | Ổn định | Nội tại |
+|--------------------------|----------------------|---------------------|---------|---------|
+| Selection Sort           | O(n^2)               | O(n^2)              | Không   | Có      |
+| Insertion Sort           | O(n)                 | O(n^2)              | Có      | Có      |
+| Interchange Sort         | O(n^2)               | O(n^2)              | Không   | Có      |
+| Bubble Sort              | O(n)                 | O(n^2)              | Có      | Có      |
+| Shaker Sort              | O(n)                 | O(n^2)              | Có      | Có      |
+| Binary Insertion Sort    | O(n)                 | O(n^2)              | Có      | Có      |
+| Shell Sort               | O(nlogn)             | O(n^(3/2))          | Không   | Có      |
+| Heap Sort                | O(nlogn)             | O(nlogn)            | Không   | Có      |
+| Quick Sort               | O(nlogn)             | O(n^2)              | Không   | Có      |
+| Merge Sort               | O(nlogn)             | O(nlogn)            | Có      | Không   |
+| Radix Sort               | O(nk)                | O(nk)               | Có      | Có      |
 
 ### So sánh ưu điểm và khuyết điểm của các thuật toán
 
