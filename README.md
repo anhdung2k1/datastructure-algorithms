@@ -451,4 +451,4 @@ Danh sách liên kết và mảng một chiều có những ưu và khuyết đi
 - **Danh sách liên kết đơn** thích hợp cho các ứng dụng đơn giản với yêu cầu chèn và xóa ở đầu danh sách nhanh chóng.
 - **Danh sách liên kết kép** cung cấp linh hoạt hơn trong việc duyệt và thao tác với các phần tử trong danh sách.
 - **Cây nhị phân tìm kiếm** cung cấp các thao tác truy cập và quản lý phần tử hiệu quả, nhưng cần đảm bảo tính cân bằng của cây.
-- **Cây nhị phân cân bằng**, như cây AVL và cây đỏ-đen, cung cấp hiệu quả cao và đảm bảo cây luôn cân bằng, nhưng đi kèm với chi phí cài đặt và duy trì cao hơn.
+- **Cây nhị phân cân bằng**, như cây AVL, cung cấp hiệu quả cao và đảm bảo cây luôn cân bằng, nhưng đi kèm với chi phí cài đặt và duy trì cao hơn.
