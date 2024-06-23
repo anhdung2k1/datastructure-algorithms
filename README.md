@@ -437,7 +437,6 @@ Danh sách liên kết và mảng một chiều có những ưu và khuyết đi
 
 ### Các loại cây nhị phân cân bằng:
 1. **Cây AVL (Adelson-Velsky and Landis Tree)**
-2. **Cây đỏ-đen (Red-Black Tree)**
 
 ### Cây AVL
 
@@ -447,15 +446,6 @@ Danh sách liên kết và mảng một chiều có những ưu và khuyết đi
 
 #### Nhược điểm:
 - **Cân bằng tốn kém:** Việc chèn và xóa có thể yêu cầu nhiều thao tác cân bằng lại cây, tốn kém thời gian.
-
-### Cây đỏ-đen
-
-#### Ưu điểm:
-- **Cân bằng hiệu quả:** Đảm bảo độ cao của cây không vượt quá 2*log(n+1).
-- **Chèn và xóa hiệu quả:** Việc chèn và xóa ít tốn kém hơn so với cây AVL.
-
-#### Nhược điểm:
-- **Cài đặt phức tạp:** Các quy tắc về màu sắc và cấu trúc cần được quản lý chặt chẽ, làm cho việc cài đặt phức tạp hơn.
 
 ### Tổng kết
 - **Danh sách liên kết đơn** thích hợp cho các ứng dụng đơn giản với yêu cầu chèn và xóa ở đầu danh sách nhanh chóng.
