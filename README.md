@@ -452,3 +452,64 @@ Danh sách liên kết và mảng một chiều có những ưu và khuyết đi
 - **Danh sách liên kết kép** cung cấp linh hoạt hơn trong việc duyệt và thao tác với các phần tử trong danh sách.
 - **Cây nhị phân tìm kiếm** cung cấp các thao tác truy cập và quản lý phần tử hiệu quả, nhưng cần đảm bảo tính cân bằng của cây.
 - **Cây nhị phân cân bằng**, như cây AVL, cung cấp hiệu quả cao và đảm bảo cây luôn cân bằng, nhưng đi kèm với chi phí cài đặt và duy trì cao hơn.
+
+### Các phép cân bằng trong AVL.
+- **Xoay phải đơn**: Sử dụng khi cây con bên trái cao hơn cây con bên phải.
+```
+Trước khi xoay
+    30
+   /
+  20
+ /
+10
+```
+```
+Xoay khi xoay phải
+    20
+   /  \
+  10  30
+```
+- **Xoay trái đơn**: Sử dụng khi cây con bên phải cao hơn cây con bên trái.
+```
+Trước khi xoay trái
+10
+  \
+   20
+     \
+      30
+```
+```
+Xoay khi xoay trái
+    20
+   /  \
+  10  30
+```
+- **Xoay trái-phải kép**: Sử dụng khi cây con bên trái có cây con bên phải cao hơn.
+```
+Trước khi xoay trái-phải kép
+    30
+   /
+  10
+    \
+     20
+```
+```
+Sau khi xoay trái-phải kép
+    20
+   /  \
+  10  30
+```
+- **Xoay phải-trái kép**: Sử dụng khi cây con bên phải có cây con bên trái cao hơn.
+```
+Trước khi xoay phải-trái kép
+  10
+    \
+     30
+    /
+   20
+```
+```
+   20
+  /  \
+10   30
+```
