@@ -345,3 +345,120 @@ void RadixSort(int a[], int n) {
 ```
 
 <img src="screenshots/radix_sort.png" width="550"/>
+
+### Phân tích ưu và khuyết điểm của danh sách liên kết so với mảng một chiều. Tổng quát hóa các trường hợp nên dùng danh sách liên kết.
+
+#### Ưu và khuyết điểm của mảng một chiều (Array)
+
+**Ưu điểm:**
+1. **Truy cập ngẫu nhiên:** Truy cập phần tử theo chỉ số với thời gian O(1). Điều này giúp thao tác lấy dữ liệu nhanh chóng và hiệu quả.
+2. **Bộ nhớ liên tục:** Các phần tử được lưu trữ trong bộ nhớ liên tục, giúp tối ưu hóa về mặt hiệu năng và quản lý bộ nhớ. Điều này cũng có lợi trong việc tăng tốc độ truy cập dữ liệu do tính cục bộ bộ nhớ.
+3. **Hiệu quả bộ nhớ:** Mảng không cần lưu trữ thêm thông tin như con trỏ, giúp tiết kiệm bộ nhớ so với các cấu trúc dữ liệu khác.
+
+**Khuyết điểm:**
+1. **Kích thước cố định:** Kích thước của mảng phải được xác định trước và không thể thay đổi sau khi tạo. Điều này gây khó khăn khi cần mở rộng hoặc thu hẹp kích thước mảng.
+2. **Chèn/Xóa không hiệu quả:** Chèn hoặc xóa phần tử giữa mảng đòi hỏi phải dịch chuyển các phần tử khác, dẫn đến thời gian O(n). Điều này làm giảm hiệu suất khi thao tác nhiều lần chèn/xóa.
+3. **Lãng phí bộ nhớ:** Nếu kích thước mảng lớn hơn số phần tử thực tế, sẽ lãng phí bộ nhớ không sử dụng.
+
+#### Ưu và khuyết điểm của danh sách liên kết (Linked List)
+
+**Ưu điểm:**
+1. **Kích thước linh hoạt:** Danh sách liên kết có thể dễ dàng thay đổi kích thước, chèn và xóa phần tử mà không cần dịch chuyển các phần tử khác. Điều này đặc biệt hữu ích khi số lượng phần tử thay đổi liên tục.
+2. **Chèn/Xóa hiệu quả:** Chèn hoặc xóa phần tử tại đầu hoặc giữa danh sách với thời gian O(1) nếu có con trỏ đến nút cần thao tác. Điều này giúp tăng hiệu suất trong các thao tác chèn/xóa.
+3. **Quản lý bộ nhớ động:** Danh sách liên kết giúp tận dụng tối đa bộ nhớ động bằng cách cấp phát và giải phóng bộ nhớ khi cần, giảm thiểu lãng phí bộ nhớ.
+
+**Khuyết điểm:**
+1. **Truy cập tuần tự:** Không hỗ trợ truy cập ngẫu nhiên, phải duyệt từ đầu danh sách, thời gian truy cập phần tử là O(n). Điều này làm giảm hiệu suất khi cần truy cập trực tiếp đến phần tử.
+2. **Sử dụng bộ nhớ:** Mỗi phần tử cần thêm bộ nhớ cho con trỏ (hoặc hai con trỏ trong danh sách liên kết kép), tốn bộ nhớ hơn mảng.
+3. **Quản lý phức tạp:** Quản lý bộ nhớ và con trỏ phức tạp hơn, dễ xảy ra lỗi nếu không cẩn thận.
+
+#### Tổng quát hóa các trường hợp nên dùng danh sách liên kết
+
+1. **Dữ liệu có kích thước thay đổi thường xuyên:**
+   - Khi số lượng phần tử không xác định trước và thay đổi liên tục, danh sách liên kết cho phép thêm và xóa phần tử một cách linh hoạt mà không cần định lại kích thước như mảng.
+
+2. **Chèn và xóa phần tử thường xuyên:**
+   - Khi các thao tác chèn và xóa phần tử diễn ra thường xuyên, đặc biệt ở đầu hoặc giữa danh sách, danh sách liên kết có thể thực hiện các thao tác này một cách hiệu quả hơn so với mảng.
+
+3. **Quản lý bộ nhớ động:**
+   - Khi bộ nhớ có thể bị phân mảnh và cần quản lý hiệu quả, danh sách liên kết giúp tận dụng tối đa bộ nhớ động bằng cách cấp phát và giải phóng bộ nhớ khi cần.
+
+4. **Không cần truy cập ngẫu nhiên:**
+   - Nếu không cần truy cập ngẫu nhiên đến các phần tử mà chỉ cần duyệt tuần tự, danh sách liên kết sẽ phù hợp hơn do không có lợi thế về truy cập ngẫu nhiên như mảng.
+
+#### Ví dụ cụ thể:
+
+- **Hàng đợi (Queue) và Ngăn xếp (Stack):**
+  - Thường sử dụng danh sách liên kết để triển khai vì cần thao tác chèn và xóa ở đầu hoặc cuối danh sách một cách nhanh chóng.
+
+- **Danh sách động:**
+  - Khi cần tạo một danh sách mà kích thước thay đổi liên tục, như danh sách sinh viên đăng ký học phần trong một học kỳ.
+
+- **Ứng dụng thao tác trên tập dữ liệu lớn:**
+  - Các ứng dụng như hệ thống quản lý bộ nhớ, hệ thống tập tin (file systems) nơi việc quản lý bộ nhớ động là quan trọng.
+
+### Tóm tắt
+Danh sách liên kết và mảng một chiều có những ưu và khuyết điểm riêng. Mảng tối ưu cho truy cập ngẫu nhiên và sử dụng bộ nhớ liên tục, trong khi danh sách liên kết linh hoạt cho việc chèn, xóa và quản lý bộ nhớ động. Chọn cấu trúc dữ liệu phù hợp dựa trên yêu cầu cụ thể của bài toán và ứng dụng.
+
+## Danh sách liên kết đơn với danh sách liên kết kép
+
+### Danh sách liên kết đơn (Singly Linked List)
+
+#### Ưu điểm:
+- **Độ phức tạp không gian thấp:** Mỗi nút chỉ chứa một con trỏ đến nút tiếp theo.
+- **Dễ cài đặt:** Cấu trúc đơn giản và dễ hiểu.
+- **Chèn và xóa nhanh chóng:** Việc chèn và xóa một nút ở đầu danh sách có độ phức tạp O(1).
+
+#### Nhược điểm:
+- **Truy cập chậm:** Phải duyệt từ đầu danh sách để truy cập một phần tử, với độ phức tạp O(n).
+- **Không thể duyệt ngược:** Chỉ có thể duyệt từ đầu đến cuối, không thể duyệt ngược lại.
+
+### Danh sách liên kết kép (Doubly Linked List)
+
+#### Ưu điểm:
+- **Duyệt hai chiều:** Có thể duyệt danh sách theo cả hai chiều (từ đầu đến cuối và ngược lại).
+- **Chèn và xóa linh hoạt:** Dễ dàng chèn và xóa một nút ở bất kỳ vị trí nào, với độ phức tạp O(1) nếu đã có vị trí cần chèn hoặc xóa.
+
+#### Nhược điểm:
+- **Độ phức tạp không gian cao hơn:** Mỗi nút chứa hai con trỏ, một đến nút trước và một đến nút sau, làm tăng độ phức tạp không gian.
+- **Cài đặt phức tạp hơn:** Việc cài đặt và quản lý con trỏ cần nhiều công đoạn hơn.
+
+## Cây nhị phân tìm kiếm (Binary Search Tree - BST)
+
+### Ưu điểm:
+- **Truy cập, chèn và xóa hiệu quả:** Với một cây cân bằng, các thao tác truy cập, chèn và xóa có độ phức tạp trung bình O(log n).
+- **Duyệt cây theo thứ tự:** Có thể duyệt cây theo thứ tự tăng dần hoặc giảm dần một cách dễ dàng.
+
+### Nhược điểm:
+- **Cân bằng cây:** Nếu không cân bằng, cây có thể trở thành một danh sách liên kết, làm tăng độ phức tạp thao tác lên O(n).
+- **Phức tạp khi cài đặt:** Cần nhiều công đoạn để duy trì tính chất cân bằng của cây.
+
+## Cây nhị phân cân bằng (Balanced Binary Tree)
+
+### Các loại cây nhị phân cân bằng:
+1. **Cây AVL (Adelson-Velsky and Landis Tree)**
+2. **Cây đỏ-đen (Red-Black Tree)**
+
+### Cây AVL
+
+#### Ưu điểm:
+- **Cây luôn cân bằng:** Đảm bảo các thao tác truy cập, chèn và xóa có độ phức tạp O(log n).
+- **Tìm kiếm nhanh:** Do luôn cân bằng nên việc tìm kiếm diễn ra nhanh chóng.
+
+#### Nhược điểm:
+- **Cân bằng tốn kém:** Việc chèn và xóa có thể yêu cầu nhiều thao tác cân bằng lại cây, tốn kém thời gian.
+
+### Cây đỏ-đen
+
+#### Ưu điểm:
+- **Cân bằng hiệu quả:** Đảm bảo độ cao của cây không vượt quá 2*log(n+1).
+- **Chèn và xóa hiệu quả:** Việc chèn và xóa ít tốn kém hơn so với cây AVL.
+
+#### Nhược điểm:
+- **Cài đặt phức tạp:** Các quy tắc về màu sắc và cấu trúc cần được quản lý chặt chẽ, làm cho việc cài đặt phức tạp hơn.
+
+### Tổng kết
+- **Danh sách liên kết đơn** thích hợp cho các ứng dụng đơn giản với yêu cầu chèn và xóa ở đầu danh sách nhanh chóng.
+- **Danh sách liên kết kép** cung cấp linh hoạt hơn trong việc duyệt và thao tác với các phần tử trong danh sách.
+- **Cây nhị phân tìm kiếm** cung cấp các thao tác truy cập và quản lý phần tử hiệu quả, nhưng cần đảm bảo tính cân bằng của cây.
+- **Cây nhị phân cân bằng**, như cây AVL và cây đỏ-đen, cung cấp hiệu quả cao và đảm bảo cây luôn cân bằng, nhưng đi kèm với chi phí cài đặt và duy trì cao hơn.
